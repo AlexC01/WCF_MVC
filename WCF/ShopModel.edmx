@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="andinoshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="ClienteGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="client_id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="password_client" Type="varchar" Mode="In" />
+          <Parameter Name="Validate" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ProductGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="product_id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="brand_id" Type="int" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="category_id" Type="int" Mode="In" />
+          <Parameter Name="Validate" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UsuarioGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="password_user" Type="varchar" Mode="In" />
+          <Parameter Name="type_user_id" Type="int" Mode="In" />
+          <Parameter Name="Validate" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="andinoshopModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="andinoshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="andinoshopEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="Usuario_Result1" ReturnType="Collection(andinoshopModel.Usuario_Result1)" />
+          <FunctionImport Name="ProductGuardar" ReturnType="Collection(andinoshopModel.ProductGuardar_Result)">
+            <Parameter Name="product_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="brand_id" Mode="In" Type="Int32" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="category_id" Mode="In" Type="Int32" />
+            <Parameter Name="Validate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ProductGuardar_Result1" ReturnType="Collection(andinoshopModel.ProductGuardar_Result1)">
+            <Parameter Name="product_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="brand_id" Mode="In" Type="Int32" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="category_id" Mode="In" Type="Int32" />
+            <Parameter Name="Validate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Productos" ReturnType="Collection(andinoshopModel.Productos_Result1)" />
+          <FunctionImport Name="Productos_Result2" ReturnType="Collection(andinoshopModel.Productos_Result2)" />
+          <FunctionImport Name="Clientes" ReturnType="Collection(andinoshopModel.Clientes_Result3)" />
+          <FunctionImport Name="Clientes_Result4" ReturnType="Collection(andinoshopModel.Clientes_Result4)" />
+          <FunctionImport Name="ClienteGuardar" ReturnType="Collection(andinoshopModel.ClienteGuardar_Result2)">
+            <Parameter Name="client_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password_client" Mode="In" Type="String" />
+            <Parameter Name="Validate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioGuardar" ReturnType="Collection(andinoshopModel.UsuarioGuardar_Result2)">
+            <Parameter Name="user_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password_user" Mode="In" Type="String" />
+            <Parameter Name="type_user_id" Mode="In" Type="Int32" />
+            <Parameter Name="Validate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ClienteGuardar_Result3" ReturnType="Collection(andinoshopModel.ClienteGuardar_Result3)">
+            <Parameter Name="client_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password_client" Mode="In" Type="String" />
+            <Parameter Name="Validate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UsuarioGuardar_Result3" ReturnType="Collection(andinoshopModel.UsuarioGuardar_Result3)">
+            <Parameter Name="user_id" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password_user" Mode="In" Type="String" />
+            <Parameter Name="type_user_id" Mode="In" Type="Int32" />
+            <Parameter Name="Validate" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Categorias_Result">
+          <Property Type="String" Name="name_category" Nullable="false" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Clientes_Result">
+          <Property Type="Int32" Name="client_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_client" Nullable="false" MaxLength="128" />
+          <Property Type="DateTime" Name="date_created" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Marca_Result">
+          <Property Type="String" Name="name_brand" Nullable="false" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Productos_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="name_brand" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="name_category" Nullable="false" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Roles_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Usuario_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_user" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="rol" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Clienteinsertupdatedelete_Result">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="Clienteinsertupdatedelete_Result1">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="ClienteGuardar_Result">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="ClienteGuardar_Result1">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="Clientes_Result1">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_client" Nullable="false" MaxLength="128" />
+        </ComplexType>
+        <ComplexType Name="Clientes_Result2">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_client" Nullable="false" MaxLength="128" />
+        </ComplexType>
+        <ComplexType Name="UsuarioGuardar_Result">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="UsuarioGuardar_Result1">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="Roles_Result1">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Usuario_Result1">
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_user" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="rol" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="ProductGuardar_Result">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="ProductGuardar_Result1">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="Productos_Result1">
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="name_brand" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="name_category" Nullable="false" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Productos_Result2">
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="name_brand" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="name_category" Nullable="false" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="Clientes_Result3">
+          <Property Type="Int32" Name="client_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_client" Nullable="false" MaxLength="128" />
+        </ComplexType>
+        <ComplexType Name="Clientes_Result4">
+          <Property Type="Int32" Name="client_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="password_client" Nullable="false" MaxLength="128" />
+        </ComplexType>
+        <ComplexType Name="ClienteGuardar_Result2">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="UsuarioGuardar_Result2">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="ClienteGuardar_Result3">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="UsuarioGuardar_Result3">
+          <Property Type="Int32" Name="Estado" Nullable="true" />
+          <Property Type="String" Name="Mensaje" Nullable="true" MaxLength="500" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="andinoshopModelStoreContainer" CdmEntityContainer="andinoshopEntities" >
+          <FunctionImportMapping FunctionImportName="Usuario_Result1" FunctionName="andinoshopModel.Store.Usuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.Usuario_Result1">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password_user" ColumnName="password_user" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProductGuardar" FunctionName="andinoshopModel.Store.ProductGuardar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.ProductGuardar_Result">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProductGuardar_Result1" FunctionName="andinoshopModel.Store.ProductGuardar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.ProductGuardar_Result1">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Productos" FunctionName="andinoshopModel.Store.Productos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.Productos_Result1">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="name_brand" ColumnName="name_brand" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name_category" ColumnName="name_category" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Productos_Result2" FunctionName="andinoshopModel.Store.Productos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.Productos_Result2">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="name_brand" ColumnName="name_brand" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name_category" ColumnName="name_category" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Clientes" FunctionName="andinoshopModel.Store.Clientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.Clientes_Result3">
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password_client" ColumnName="password_client" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Clientes_Result4" FunctionName="andinoshopModel.Store.Clientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.Clientes_Result4">
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password_client" ColumnName="password_client" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ClienteGuardar" FunctionName="andinoshopModel.Store.ClienteGuardar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.ClienteGuardar_Result2">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsuarioGuardar" FunctionName="andinoshopModel.Store.UsuarioGuardar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.UsuarioGuardar_Result2">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ClienteGuardar_Result3" FunctionName="andinoshopModel.Store.ClienteGuardar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.ClienteGuardar_Result3">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UsuarioGuardar_Result3" FunctionName="andinoshopModel.Store.UsuarioGuardar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="andinoshopModel.UsuarioGuardar_Result3">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

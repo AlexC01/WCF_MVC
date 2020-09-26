@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebWCF.ServiceReference1.Usuario_Result1>
+
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<h2>Usuarios</h2>
+
+
+<p>
+    @Html.ActionLink("Crear Usuario", "Insert", "test", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th  class="text-center">
+            Nombre
+        </th>
+        <th  class="text-center">
+            Email
+        </th>
+        <th  class="text-center">
+            Username
+        </th>
+        <th  class="text-center">
+           Telefono
+        </th>
+        <th  class="text-center">
+            Rol
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.username)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.rol)
+    </td>
+
+    <td>
+        @Html.ActionLink("Eliminar", "Delete", "test", new {  IdUsuario = @item.user_id}, new { @class = "btn btn-danger", @onclick = "eliminar()" })
+    </td>
+</tr>
+    }
+
+</table>

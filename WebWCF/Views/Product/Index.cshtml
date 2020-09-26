@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebWCF.ServiceReference1.Productos_Result2>
+
+@{
+    ViewBag.Title = "Productos";
+}
+
+<h2>Productos</h2>
+
+<p>
+    @Html.ActionLink("Crear Producto", "Insert", "Product", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            Nombre 
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>
+            Marca
+        </th>
+        <th>
+            Categoria
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.description)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.name_brand)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.name_category)
+    </td>
+    <td>
+        @Html.ActionLink("Eliminar", "Delete", "Product", new { IdProduct = @item.product_id }, new { @class = "btn btn-danger", @onclick = "eliminar()" })
+    </td>
+</tr>
+}
+
+</table>
